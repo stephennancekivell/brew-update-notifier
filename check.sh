@@ -11,7 +11,7 @@ PATH=/usr/local/bin:$PATH
 BREW_EXEC='/usr/local/bin/brew'
 TERMINAL_NOTIFIER=`which terminal-notifier`
 SCRIPT_DIR=`dirname $0`
-DO_UPGRADE="$SCRIPT_DIR/do_upgrade.sh"
+DO_UPGRADE="$SCRIPT_DIR/do-upgrade.sh"
 NOTIF_ARGS="-sender com.apple.Terminal -execute $DO_UPGRADE"
 
 $BREW_EXEC update 2>&1 > /dev/null
@@ -19,9 +19,9 @@ outdated=`$BREW_EXEC outdated | tr ' ' '\n'`
 
 if [ -z "$outdated" ] ; then
     if [ -e $TERMINAL_NOTIFIER ]; then
-	echo "no updates"
-        # No updates available
-        #$TERMINAL_NOTIFIER $NOTIF_ARGS \
+	   #echo "no updates"
+        #No updates available
+        # $TERMINAL_NOTIFIER $NOTIF_ARGS \
         #   -title "No Homebrew Updates Available" \
         #    -message "No updates available yet for any homebrew packages."
     fi
