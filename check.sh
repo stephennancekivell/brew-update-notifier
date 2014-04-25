@@ -19,7 +19,7 @@ outdated=`$BREW_EXEC outdated | tr ' ' '\n'`
 
 if [ -z "$outdated" ] ; then
     if [ -e $TERMINAL_NOTIFIER ]; then
-	   #echo "no updates"
+	echo "no updates"
         #No updates available
         # $TERMINAL_NOTIFIER $NOTIF_ARGS \
         #   -title "No Homebrew Updates Available" \
