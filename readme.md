@@ -1,6 +1,6 @@
 Brew Update Notifier
 ====================
-Automatically get osx notifications and apply brew updates
+Automatically get notifications and apply brew updates on osx
 
 Install
 -------
