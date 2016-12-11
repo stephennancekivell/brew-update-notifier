@@ -8,4 +8,4 @@ echo "Installing Dependency"
 brew install terminal-notifier
 
 echo "Adding Crontab to run every hour"
-(crontab -l ; echo "0 * * * * ~/bin/brewupdatenotifier/check.sh") | sort - | uniq - | crontab -
+(crontab -l ; echo "0 * * * * ~/bin/brewupdatenotifier/check.sh > /dev/null") | sort - | uniq - | crontab -
