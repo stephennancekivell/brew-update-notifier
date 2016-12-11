@@ -12,7 +12,7 @@ BREW_EXEC='/usr/local/bin/brew'
 TERMINAL_NOTIFIER=`which terminal-notifier`
 SCRIPT_DIR=`dirname $0`
 DO_UPGRADE="$SCRIPT_DIR/do-upgrade.sh"
-NOTIF_ARGS="-sender com.apple.Terminal -execute $DO_UPGRADE"
+NOTIF_ARGS="-execute $DO_UPGRADE"
 
 $BREW_EXEC update 2>&1 > /dev/null
 outdated=`$BREW_EXEC outdated | tr ' ' '\n'`
@@ -41,6 +41,6 @@ $message"
 $message"
         fi
         # Send to the Nofication Center
-        $TERMINAL_NOTIFIER $NOTIF_ARGS -title "Homebrew Update(s) Available" -message "$message"
+        $TERMINAL_NOTIFIER $NOTIF_ARGS -title "Homebrew Updates Available" -message "$message"
     fi
 fi
