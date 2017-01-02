@@ -12,10 +12,16 @@ BREW_EXEC='/usr/local/bin/brew'
 TERMINAL_NOTIFIER=`which terminal-notifier`
 SCRIPT_DIR=`dirname $0`
 DO_UPGRADE="$SCRIPT_DIR/do-upgrade.sh"
-NOTIF_ARGS="-execute $DO_UPGRADE"
+LOG="$SCRIPT_DIR/log.txt"
+DATE=`date +%Y-%m-%dT%H:%M:%S`
+echo $DATE " Checking for updates" >> $LOG
 
 $BREW_EXEC update 2>&1 > /dev/null
 outdated=`$BREW_EXEC outdated | tr ' ' '\n'`
+
+echo "Found outdated ----" >> $LOG
+echo $outdated >> $LOG
+echo "----" >> $LOG
 
 if [ -z "$outdated" ] ; then
     if [ -e $TERMINAL_NOTIFIER ]; then
@@ -41,6 +47,6 @@ $message"
 $message"
         fi
         # Send to the Nofication Center
-        $TERMINAL_NOTIFIER $NOTIF_ARGS -title "Homebrew Updates Available" -message "$message"
+        $TERMINAL_NOTIFIER -execute $DO_UPGRADE -title "Homebrew Updates Available" -message "$message" -timeout 10
     fi
 fi
