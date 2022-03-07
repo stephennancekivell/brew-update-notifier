@@ -1,9 +1,7 @@
 #!/bin/bash
 
-PATH=/usr/local/bin:$PATH
-
-TERMINAL_NOTIFIER=`which terminal-notifier`
-BREW_EXEC='/usr/local/bin/brew'
+TERMINAL_NOTIFIER=`/opt/homebrew/bin/terminal-notifier`
+BREW_EXEC='/opt/homebrew/bin/brew'
 SCRIPT_DIR=`dirname $0`
 LOG="$SCRIPT_DIR/log.txt"
 DATE=`date +%Y-%m-%dT%H:%M:%S`
