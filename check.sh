@@ -8,7 +8,7 @@
 
 PATH=/usr/local/bin:$PATH
 
-BREW_EXEC='/usr/local/bin/brew'
+BREW_EXEC='/opt/homebrew/bin/brew'
 TERMINAL_NOTIFIER=`which terminal-notifier`
 SCRIPT_DIR=`dirname $0`
 DO_UPGRADE="$SCRIPT_DIR/do-upgrade.sh"
